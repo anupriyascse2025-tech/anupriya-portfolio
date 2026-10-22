@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anupriya S | AI & Full Stack Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Anupriya S - Computer Science Engineer passionate about AI, NLP, LLMs (Llama 3.2, Ollama), and Full Stack Web Development.">
+  <meta name="keywords" content="Anupriya S, Portfolio, AI Developer, Full Stack Intern, Machine Learning, Python, Flask, Llama 3.2, Ollama, Slack Bot, Coimbatore">
+  <meta name="author" content="Anupriya S">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Anupriya S | AI & Full Stack Developer">
+  <meta property="og:description" content="Engineering student passionate about AI, NLP, and Full Stack development. Explore live AI demos & projects.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Particle Canvas -->
+  <canvas id="neuralCanvas"></canvas>
+
+  <!-- Ambient Glow Blobs -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">Anupriya</span>
+        <span class="logo-accent">.AI</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#demos" class="nav-link highlight-link">
+          <span class="pulse-dot"></span> Live AI Demos
+        </a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#research" class="nav-link">Research & Certs</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn-terminal-toggle" id="openTerminalBtn" title="Open Interactive CLI Terminal (Ctrl + `)">
+          <span class="terminal-icon">&gt;_</span>
+          <span class="btn-text">CLI</span>
+        </button>
+        <a href="#contact" class="btn btn-sm btn-primary">Hire Me</a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="status-beacon"></span>
+            <span>Open for AI & Full Stack Internships & Roles</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Anupriya S</span>
+          </h1>
+
+          <div class="typewriter-container">
+            <span class="typewriter-prefix">Specialized in</span>
+            <span class="typewriter-text" id="typewriterText">AI & Machine Learning</span>
+            <span class="typewriter-cursor">|</span>
+          </div>
+
+          <p class="hero-description">
+            Motivated Computer Science Engineering student passionate about engineering intelligent AI systems, NLP pipelines, and scalable web solutions. Creator of <strong>CareerPilot AI</strong> and <strong>AI Patent Explorer</strong>.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#demos" class="btn btn-primary btn-glow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Try Live AI Demos
+            </a>
+            <a href="#projects" class="btn btn-secondary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+              Explore Projects
+            </a>
+            <button class="btn btn-ghost" id="openResumeModalBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              Resume PDF
+            </button>
+          </div>
+
+          <!-- Quick Connect Chips -->
+          <div class="quick-chips">
+            <div class="chip-item copy-chip" data-copy="anupriya07042006@gmail.com" title="Click to copy email">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>anupriya07042006@gmail.com</span>
+              <span class="copy-badge">Copy</span>
+            </div>
+            <div class="chip-item copy-chip" data-copy="+916382750472" title="Click to copy phone">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+91-6382750472</span>
+              <span class="copy-badge">Copy</span>
+            </div>
+            <div class="chip-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Coimbatore, India</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Graphic / Interactive Card -->
+        <div class="hero-visual">
+          <div class="code-terminal-card tilt-card">
+            <div class="terminal-card-header">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="window-title">anupriya.config.json</div>
+              <div class="window-badge">v2.5.0</div>
+            </div>
+            <div class="terminal-card-body">
+              <pre><code><span class="json-key">"developer"</span>: {
+  <span class="json-key">"name"</span>: <span class="json-str">"Anupriya S"</span>,
+  <span class="json-key">"college"</span>: <span class="json-str">"SNS College Of Technology"</span>,
+  <span class="json-key">"degree"</span>: <span class="json-str">"B.E. Computer Science & Eng."</span>,
+  <span class="json-key">"cgpa"</span>: <span class="json-num">9.33</span>, <span class="json-comment">// top percentile</span>
+  <span class="json-key">"focusAreas"</span>: [
+    <span class="json-str">"Artificial Intelligence"</span>,
+    <span class="json-str">"Natural Language Processing"</span>,
+    <span class="json-str">"Full-Stack Web Development"</span>,
+    <span class="json-str">"LLM Engineering (Llama 3.2, Ollama)"</span>
+  ],
+  <span class="json-key">"flagships"</span>: [
+    <span class="json-str">"AI Patent Explorer"</span>,
+    <span class="json-str">"CareerPilot AI Slack Bot"</span>
+  ],
+  <span class="json-key">"status"</span>: <span class="json-str">"Eager to build impactful solutions"</span>
+}</code></pre>
+            </div>
+            <div class="card-footer-metrics">
+              <div class="metric-pill">
+                <span class="metric-num">9.33</span>
+                <span class="metric-label">CGPA / 10</span>
+              </div>
+              <div class="metric-pill">
+                <span class="metric-num">2+</span>
+                <span class="metric-label">AI Projects</span>
+              </div>
+              <div class="metric-pill">
+                <span class="metric-num">1</span>
+                <span class="metric-label">CIT Paper</span>
+              </div>
+              <div class="metric-pill">
+                <span class="metric-num">100%</span>
+                <span class="metric-label">Dedication</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">Bridging <span class="gradient-text">Intelligent AI</span> & Practical Web Engineering</h2>
+          <p class="section-subtitle">A computer science engineer driven by curiosity, algorithmic thinking, and building tools that make people more capable.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Bio card -->
+          <div class="about-card glass-panel">
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <h3>Career Objective</h3>
+            <p>
+              Motivated engineering student with a strong foundation in programming, software development, and AI technologies. Experienced in developing academic and team projects involving AI, web development, and API integration.
+            </p>
+            <p>
+              Eager to apply technical skills in an internship environment, contribute to innovative high-impact projects, and gain hands-on industry experience while continuously learning and growing.
+            </p>
+            <div class="values-tags">
+              <span class="tag">Problem Solver</span>
+              <span class="tag">AI & NLP Enthusiast</span>
+              <span class="tag">Fast Learner</span>
+              <span class="tag">Team Player</span>
+            </div>
+          </div>
+
+          <!-- Education Card -->
+          <div class="about-card glass-panel highlight-border">
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </div>
+            <div class="card-top-badge">Academic Excellence</div>
+            <h3>Education</h3>
+            <div class="edu-item">
+              <div class="edu-title">Bachelor of Engineering (B.E.)</div>
+              <div class="edu-branch">Computer Science & Engineering</div>
+              <div class="edu-college">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                SNS College Of Technology, Coimbatore, India
+              </div>
+              <div class="edu-meta">
+                <span class="edu-year">2025 – 2029</span>
+                <span class="edu-cgpa-pill">
+                  <strong>CGPA: 9.33 / 10</strong>
+                </span>
+              </div>
+            </div>
+            <div class="core-competencies">
+              <h4>Core CS Competencies:</h4>
+              <div class="comp-list">
+                <span class="comp-chip">Data Structures & Algorithms</span>
+                <span class="comp-chip">Object-Oriented Programming (OOP)</span>
+                <span class="comp-chip">System Design & Problem Solving</span>
+                <span class="comp-chip">RESTful API Architecture</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & PRESENTATION TIMELINE -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Journey & Milestones</span>
+          <h2 class="section-title">Industry Experience & <span class="gradient-text">Research</span></h2>
+          <p class="section-subtitle">Real-world web development internship and scientific research presentation.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Timeline Item 1: Internship -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">June 2026</div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-role-badge">Industry Internship</div>
+              <h3 class="timeline-role">Full Stack Web Development Intern</h3>
+              <div class="timeline-company">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                Nxtlogic Software Solutions | Coimbatore, IN
+              </div>
+              <p class="timeline-desc">
+                Engaged in end-to-end full stack web architecture, frontend interface engineering, and backend API integration. Collaborated with senior developers to deliver responsive, maintainable web applications with modern workflows.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Full Stack Development</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">HTML5 / CSS3</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">Team Collaboration</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: CIT Paper Presentation -->
+          <div class="timeline-item">
+            <div class="timeline-dot dot-cyan"></div>
+            <div class="timeline-date">Research & Innovation</div>
+            <div class="timeline-content glass-panel highlight-border">
+              <div class="timeline-role-badge badge-cyan">Scientific Paper Presentation</div>
+              <h3 class="timeline-role">AI-Powered Real-Time Brain-Computer Interface for Paralyzed Patients Using Stream Computing</h3>
+              <div class="timeline-company">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                Coimbatore Institute of Technology (CIT)
+              </div>
+              <p class="timeline-desc">
+                Researched and presented an innovative architectural framework utilizing artificial intelligence and real-time stream computing to decode neural signals from brain-computer interfaces (BCI), restoring communication and control for paralyzed patients with low latency.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Brain-Computer Interface</span>
+                <span class="tag">Stream Computing</span>
+                <span class="tag">Neural Signals</span>
+                <span class="tag">Real-Time AI</span>
+                <span class="tag">CIT Symposium</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE AI DEMOS SECTION (KEY CREATIVE FEATURE) -->
+    <section class="section demos-section" id="demos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Interactive AI Playgrounds</span>
+          <h2 class="section-title">Test My <span class="gradient-text">AI Systems Live</span></h2>
+          <p class="section-subtitle">Experience the actual capabilities of CareerPilot AI and AI Patent Explorer directly in your browser.</p>
+        </div>
+
+        <div class="demo-tabs">
+          <button class="demo-tab-btn active" data-tab="careerpilot-tab">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            CareerPilot AI (Slack + Llama 3.2 Simulator)
+          </button>
+          <button class="demo-tab-btn" data-tab="patent-tab">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            AI Patent Explorer (NLP Search Sandbox)
+          </button>
+        </div>
+
+        <!-- TAB 1: CareerPilot AI Live Simulator -->
+        <div class="demo-panel active" id="careerpilot-tab">
+          <div class="slack-mockup glass-panel">
+            <div class="slack-header">
+              <div class="slack-channel-info">
+                <span class="channel-hash">#</span>
+                <span class="channel-name">career-pilot-ai</span>
+                <span class="bot-badge">APP</span>
+                <span class="status-indicator online"></span>
+                <span class="bot-model">Llama 3.2 via Ollama • Socket Mode Active</span>
+              </div>
+              <div class="slack-actions">
+                <button class="btn-clear-chat" id="clearChatBtn" title="Reset conversation">Reset Chat</button>
+              </div>
+            </div>
+
+            <div class="slack-quick-prompts">
+              <span class="prompts-label">Try quick prompts:</span>
+              <button class="prompt-pill" data-prompt="roadmap">🗺️ AI Engineer Roadmap (6-Month)</button>
+              <button class="prompt-pill" data-prompt="interview">🎯 Top Python & NLP Interview Questions</button>
+              <button class="prompt-pill" data-prompt="project">💡 Creative AI Project Ideas</button>
+              <button class="prompt-pill" data-prompt="resume">📄 Resume Optimization for Tech Roles</button>
+            </div>
+
+            <div class="slack-chat-body" id="slackChatBody">
+              <!-- Bot welcome message -->
+              <div class="slack-message bot-message">
+                <div class="avatar bot-avatar">🤖</div>
+                <div class="message-content">
+                  <div class="message-sender">
+                    <span class="name">CareerPilot AI</span>
+                    <span class="badge">APP</span>
+                    <span class="timestamp">Just now</span>
+                  </div>
+                  <div class="message-text">
+                    <p>👋 <strong>Hello! I'm CareerPilot AI</strong>, powered by local <strong>Llama 3.2</strong> and <strong>Slack Bolt</strong>.</p>
+                    <p>I provide personalized career roadmaps, real-time interview prep, resume guidance, and skill development advice. Pick a quick prompt above or type your question below!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chat input -->
+            <form class="slack-input-form" id="slackChatForm">
+              <input type="text" id="slackUserInput" placeholder="Ask CareerPilot AI anything about career roadmaps, interviews, skills..." autocomplete="off">
+              <button type="submit" class="slack-send-btn" id="slackSendBtn" aria-label="Send message">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- TAB 2: AI Patent Explorer Live Sandbox -->
+        <div class="demo-panel" id="patent-tab">
+          <div class="patent-sandbox glass-panel">
+            <div class="sandbox-header">
+              <div class="sandbox-title">
+                <span class="sandbox-tag">Flask + NLP + Machine Learning</span>
+                <h3>AI Patent Search & Trend Analytics Sandbox</h3>
+              </div>
+              <p class="sandbox-subtitle">Simulate real-time patent queries, semantic similarity scoring, and keyword extraction trends.</p>
+            </div>
+
+            <div class="search-sandbox-bar">
+              <div class="search-input-wrapper">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="patentSearchInput" placeholder="Search keywords (e.g. Brain-Computer Interface, NLP, Robotics, Autonomous Vehicles)..." value="Brain-Computer Interface">
+                <button class="btn btn-sm btn-primary" id="patentSearchBtn">Analyze Patents</button>
+              </div>
+            </div>
+
+            <div class="sample-search-chips">
+              <span class="chip-label">Sample queries:</span>
+              <button class="sample-chip" data-query="Brain-Computer Interface">🧠 Brain-Computer Interface</button>
+              <button class="sample-chip" data-query="Natural Language Processing">💬 NLP & LLM Architecture</button>
+              <button class="sample-chip" data-query="Autonomous Vehicles">🚗 Autonomous Navigation</button>
+              <button class="sample-chip" data-query="Healthcare Diagnostics">🏥 AI Health Diagnostics</button>
+            </div>
+
+            <!-- Patent Results Preview -->
+            <div class="patent-results-wrapper" id="patentResultsWrapper">
+              <div class="results-stats-row">
+                <div class="stat-box">
+                  <span class="stat-label">Matched Patents</span>
+                  <span class="stat-value" id="patentCount">1,428</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-label">Average Similarity</span>
+                  <span class="stat-value text-cyan" id="patentSimilarity">94.6%</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-label">Trend Velocity</span>
+                  <span class="stat-value text-emerald" id="patentVelocity">+38% YoY</span>
+                </div>
+                <div class="stat-box">
+                  <span class="stat-label">Top Filing Domain</span>
+                  <span class="stat-value" id="patentDomain">Neural AI & MedTech</span>
+                </div>
+              </div>
+
+              <div class="patent-cards-grid" id="patentCardsGrid">
+                <!-- Dynamically populated by script.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FLAGSHIP PROJECTS DEEP DIVE -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Featured Work</span>
+          <h2 class="section-title">Flagship <span class="gradient-text">Engineering Projects</span></h2>
+          <p class="section-subtitle">Deep dive into the architectural design, technologies, and outcomes of key projects.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: AI Patent Explorer -->
+          <div class="project-card glass-panel tilt-card">
+            <div class="project-header">
+              <div class="project-type-badge">
+                <span class="pulse-beacon"></span>
+                <span>Team Project (Ongoing)</span>
+              </div>
+              <div class="project-links">
+                <a href="#demos" class="link-icon" title="View interactive sandbox">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title">AI Patent Explorer</h3>
+            <p class="project-summary">
+              An intelligent patent discovery and trend extraction platform that enables researchers and inventors to explore, cluster, and analyze global patent data using machine learning and NLP.
+            </p>
+
+            <div class="project-features">
+              <div class="feat-item">
+                <span class="feat-check">➔</span>
+                <span>Implemented intelligent semantic patent search and filtering across keywords, domains, technologies, and innovation vectors.</span>
+              </div>
+              <div class="feat-item">
+                <span class="feat-check">➔</span>
+                <span>Applied NLP and ML techniques to extract patent abstracts, identify similar patents, and highlight technological trajectory trends.</span>
+              </div>
+              <div class="feat-item">
+                <span class="feat-check">➔</span>
+                <span>Designed and engineered a responsive Flask-based web interface for patent visualization and analytics.</span>
+              </div>
+            </div>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">NLP</span>
+              <span class="tech-badge">Machine Learning</span>
+              <span class="tech-badge">Flask</span>
+              <span class="tech-badge">Patent APIs</span>
+              <span class="tech-badge">NumPy</span>
+              <span class="tech-badge">Pandas</span>
+              <span class="tech-badge">HTML5/CSS3</span>
+            </div>
+          </div>
+
+          <!-- Project 2: CareerPilot AI -->
+          <div class="project-card glass-panel tilt-card">
+            <div class="project-header">
+              <div class="project-type-badge badge-green">
+                <span>Team Project • Open Source</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-icon" title="View on GitHub">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-title">CareerPilot AI</h3>
+            <p class="project-summary">
+              An intelligent, conversational career guidance Slack assistant providing students and job seekers with personalized learning roadmaps, interview question banks, project ideas, and resume optimization.
+            </p>
+
+            <div class="project-features">
+              <div class="feat-item">
+                <span class="feat-check">➔</span>
+                <span>Integrated Slack Bolt SDK and Socket Mode to enable real-time bidirectional messaging without external webhooks.</span>
+              </div>
+              <div class="feat-item">
+                <span class="feat-check">➔</span>
+                <span>Architected modular AI workflows for personalized roadmap generation, technical interview mock questions, and skill progression.</span>
+              </div>
+              <div class="feat-item">
+                <span class="feat-check">➔</span>
+                <span>Integrated local Ollama with Llama 3.2 to generate simple-English, bullet-formatted, zero-lag career guidance.</span>
+              </div>
+            </div>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Slack Bolt</span>
+              <span class="tech-badge">Slack API</span>
+              <span class="tech-badge">Ollama</span>
+              <span class="tech-badge">Llama 3.2</span>
+              <span class="tech-badge">Socket Mode</span>
+              <span class="tech-badge">python-dotenv</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Technical Arsenal</span>
+          <h2 class="section-title">Skills & <span class="gradient-text">Technologies</span></h2>
+          <p class="section-subtitle">Proficiencies acquired through coursework, production projects, and modern AI engineering.</p>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="skill-filter-tabs">
+          <button class="skill-tab active" data-filter="all">All Skills</button>
+          <button class="skill-tab" data-filter="ai">AI, LLMs & APIs</button>
+          <button class="skill-tab" data-filter="lang">Programming Languages</button>
+          <button class="skill-tab" data-filter="frameworks">Frameworks & Web</button>
+          <button class="skill-tab" data-filter="core">Core CS & Tools</button>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid">
+          <!-- Skill Items -->
+          <div class="skill-card" data-category="lang">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap icon-python">🐍</div>
+              <div class="skill-meta">
+                <h4>Python</h4>
+                <span class="skill-level">Advanced</span>
+              </div>
+            </div>
+            <div class="skill-progress-bar"><div class="progress" style="width: 90%;"></div></div>
+            <p class="skill-context">Flask, NLP, Pandas, NumPy, Ollama, API integrations</p>
+          </div>
+
+          <div class="skill-card" data-category="lang">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap icon-java">☕</div>
+              <div class="skill-meta">
+                <h4>Java</h4>
+                <span class="skill-level">Proficient</span>
+              </div>
+            </div>
+            <div class="skill-progress-bar"><div class="progress" style="width: 85%;"></div></div>
+            <p class="skill-context">Object-Oriented Programming, Data Structures, Algorithms</p>
+          </div>
+
+          <div class="skill-card" data-category="lang frameworks">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap icon-web">🌐</div>
+              <div class="skill-meta">
+                <h4>HTML5 & CSS3</h4>
+                <span class="skill-level">Advanced</span>
+              </div>
+            </div>
+            <div class="skill-progress-bar"><div class="progress" style="width: 92%;"></div></div>
+            <p class="skill-context">Semantic layouts, responsive flex/grid, modern UI/UX</p>
+          </div>
+
+          <div class="skill-card" data-category="ai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap icon-ai">🦙</div>
+              <div class="skill-meta">
+                <h4>Ollama & Llama 3.2</h4>
+                <span class="skill-level">Specialist</span>
+              </div>
+            </div>
+            <div class="skill-progress-bar"><div class="progress" style="width: 90%;"></div></div>
+            <p class="skill-context">Local LLM inference, prompt orchestration, CareerPilot AI</p>
+          </div>
+
+          <div class="skill-card" data-category="ai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap icon-ai">🧠</div>
+              <div class="skill-meta">
+                <h4>NLP & Machine Learning</h4>
+                <span class="skill-level">Proficient</span>
+              </div>
+            </div>
+            <div class="skill-progress-bar"><div class="progress" style="width: 85%;"></div></div>
+            <p class="skill-context">Text classification, semantic clustering, patent discovery</p>
+          </div>
+
+          <div class="skill-card" data-category="frameworks">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap icon-flask">⚗️</div>
+              <div class="skill-meta">
+                <h4>Flask</h4>
+                <span class="skill-level">Advanced</span>
+              </div>
+            </div>
+            <div class="skill-progress-bar"><div class="progress" style="width: 88%;"></div></div>
+            <p class="skill-context">Web microframework, REST endpoints, template routing</p>
+          </div>
+
+          <div class="skill-card" data-category="frameworks">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap icon-slack">💬</div>
+              <div class="skill-meta">
+                <h4>Slack Bolt & API</h4>
+                <span class="skill-level">Advanced</span>
+              </div>
+            </div>
+            <div class="skill-progress-bar"><div class="progress" style="width: 88%;"></div></div>
+            <p class="skill-context">Socket Mode, interactive blocks, automated bot workflows</p>
+          </div>
+
+          <div class="skill-card" data-category="frameworks">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap icon-bootstrap">🎨</div>
+              <div class="skill-meta">
+                <h4>Bootstrap & UI</h4>
+                <span class="skill-level">Proficient</span>
+              </div>
+            </div>
+            <div class="skill-progress-bar"><div class="progress" style="width: 86%;"></div></div>
+            <p class="skill-context">Responsive grids, components, modern utility classes</p>
+          </div>
+
+          <div class="skill-card" data-category="frameworks">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap icon-api">⚡</div>
+              <div class="skill-meta">
+                <h4>RESTful APIs</h4>
+                <span class="skill-level">Advanced</span>
+              </div>
+            </div>
+            <div class="skill-progress-bar"><div class="progress" style="width: 90%;"></div></div>
+            <p class="skill-context">API integration, JSON data schemas, HTTP request pipelines</p>
+          </div>
+
+          <div class="skill-card" data-category="core">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap icon-algo">🧩</div>
+              <div class="skill-meta">
+                <h4>Data Structures & Algorithms</h4>
+                <span class="skill-level">High Aptitude</span>
+              </div>
+            </div>
+            <div class="skill-progress-bar"><div class="progress" style="width: 88%;"></div></div>
+            <p class="skill-context">Problem solving, complexity analysis, trees, graphs, arrays</p>
+          </div>
+
+          <div class="skill-card" data-category="core">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap icon-oop">🧱</div>
+              <div class="skill-meta">
+                <h4>Object-Oriented Programming</h4>
+                <span class="skill-level">Advanced</span>
+              </div>
+            </div>
+            <div class="skill-progress-bar"><div class="progress" style="width: 92%;"></div></div>
+            <p class="skill-context">Encapsulation, inheritance, modular architecture, design</p>
+          </div>
+
+          <div class="skill-card" data-category="ai">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap icon-ai">🤖</div>
+              <div class="skill-meta">
+                <h4>AI Platforms & APIs</h4>
+                <span class="skill-level">Power User</span>
+              </div>
+            </div>
+            <div class="skill-progress-bar"><div class="progress" style="width: 94%;"></div></div>
+            <p class="skill-context">OpenAI API, Gemini, Claude, GitHub Copilot, Lovable, Gamma</p>
+          </div>
+
+          <div class="skill-card" data-category="core">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap icon-git">🐙</div>
+              <div class="skill-meta">
+                <h4>Git & GitHub</h4>
+                <span class="skill-level">Proficient</span>
+              </div>
+            </div>
+            <div class="skill-progress-bar"><div class="progress" style="width: 87%;"></div></div>
+            <p class="skill-context">Version control, branching, PRs, collaborative workflows</p>
+          </div>
+
+          <div class="skill-card" data-category="core">
+            <div class="skill-card-top">
+              <div class="skill-icon-wrap icon-vscode">💻</div>
+              <div class="skill-meta">
+                <h4>VS Code & Figma</h4>
+                <span class="skill-level">Proficient</span>
+              </div>
+            </div>
+            <div class="skill-progress-bar"><div class="progress" style="width: 89%;"></div></div>
+            <p class="skill-context">IDE debugging, extensions, wireframing & prototyping</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH & CERTIFICATIONS -->
+    <section class="section certs-section" id="research">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Academic & Industry Accreditations</span>
+          <h2 class="section-title">Research & <span class="gradient-text">Certifications</span></h2>
+          <p class="section-subtitle">Recognitions validating artificial intelligence expertise and professional learning.</p>
+        </div>
+
+        <div class="research-spotlight glass-panel highlight-border">
+          <div class="spotlight-content">
+            <div class="spotlight-badge">Featured Paper Presentation</div>
+            <h3 class="spotlight-title">AI-Powered Real-Time Brain-Computer Interface for Paralyzed Patients Using Stream Computing</h3>
+            <div class="spotlight-venue">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Presented at <strong>Coimbatore Institute of Technology (CIT)</strong>
+            </div>
+            <p class="spotlight-desc">
+              Investigated real-time decoding architectures that combine neural signal stream processing with AI models to assist paralyzed individuals in translating thoughts into digital intent with ultra-low latency.
+            </p>
+          </div>
+          <div class="spotlight-metric">
+            <div class="metric-circle">
+              <span class="big-num">CIT</span>
+              <span class="metric-sub">Symposium</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="certs-grid">
+          <div class="cert-card glass-panel">
+            <div class="cert-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="7" y1="8" x2="17" y2="8"></line><line x1="7" y1="12" x2="17" y2="12"></line><line x1="7" y1="16" x2="13" y2="16"></line></svg>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">IBM</div>
+              <h4 class="cert-name">Exploring Artificial Intelligence</h4>
+              <p class="cert-detail">Foundations of machine learning, deep neural nets, and enterprise AI lifecycle paradigms.</p>
+            </div>
+            <span class="cert-status-badge">Verified</span>
+          </div>
+
+          <div class="cert-card glass-panel">
+            <div class="cert-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">Scaler</div>
+              <h4 class="cert-name">Python Course</h4>
+              <p class="cert-detail">Comprehensive mastery of Python idioms, data structures, algorithms, and modular design.</p>
+            </div>
+            <span class="cert-status-badge">Verified</span>
+          </div>
+
+          <div class="cert-card glass-panel">
+            <div class="cert-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </div>
+            <div class="cert-body">
+              <div class="cert-issuer">LinkedIn Learning</div>
+              <h4 class="cert-name">Digital Networking Strategies</h4>
+              <p class="cert-detail">Professional branding, open-source networking, and technical community collaboration.</p>
+            </div>
+            <span class="cert-status-badge">Verified</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & GET IN TOUCH -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Let's Connect</span>
+          <h2 class="section-title">Start a <span class="gradient-text">Conversation</span></h2>
+          <p class="section-subtitle">Interested in an internship candidate, team collaboration, or discussing AI? Feel free to reach out directly.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Cards -->
+          <div class="contact-info-col">
+            <div class="contact-card glass-panel copy-card" data-copy="anupriya07042006@gmail.com">
+              <div class="contact-icon email-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">Email Me</span>
+                <a href="mailto:anupriya07042006@gmail.com" class="contact-value">anupriya07042006@gmail.com</a>
+              </div>
+              <button class="btn-copy-action" title="Copy email">Copy</button>
+            </div>
+
+            <div class="contact-card glass-panel copy-card" data-copy="+916382750472">
+              <div class="contact-icon phone-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">Call / WhatsApp</span>
+                <a href="tel:+916382750472" class="contact-value">+91-6382750472</a>
+              </div>
+              <button class="btn-copy-action" title="Copy phone number">Copy</button>
+            </div>
+
+            <div class="contact-card glass-panel">
+              <div class="contact-icon location-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="contact-details">
+                <span class="contact-label">Location</span>
+                <span class="contact-value">Coimbatore, Tamil Nadu, India</span>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links-panel glass-panel">
+              <span class="social-heading">Connect On Professional Networks:</span>
+              <div class="social-buttons">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn linkedin-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <span>LinkedIn Profile</span>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn github-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>GitHub Profile</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Message Form -->
+          <div class="contact-form-col">
+            <div class="form-container glass-panel">
+              <h3>Send a Direct Message</h3>
+              <p>Leave a note with your project or opportunity details and I will reply promptly.</p>
+              
+              <form id="portfolioContactForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="senderName">Your Name</label>
+                    <input type="text" id="senderName" name="name" placeholder="e.g. John Doe" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="senderEmail">Your Email</label>
+                    <input type="email" id="senderEmail" name="email" placeholder="e.g. john@company.com" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="messageSubject">Subject</label>
+                  <input type="text" id="messageSubject" name="subject" placeholder="e.g. Internship Opportunity / Collaboration" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="messageBody">Message</label>
+                  <textarea id="messageBody" name="message" rows="4" placeholder="Tell me about the role, project, or opportunity..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="formSubmitBtn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                  Send Message
+                </button>
+                <div class="form-status-msg" id="formStatusMsg"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- INTERACTIVE CLI TERMINAL MODAL -->
+  <div class="terminal-modal" id="terminalModal">
+    <div class="terminal-modal-dialog">
+      <div class="terminal-modal-header">
+        <div class="window-dots">
+          <span class="dot dot-red" id="closeTerminalDot"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <div class="terminal-modal-title">anupriya@terminal:~ (type 'help' for commands)</div>
+        <button class="btn-close-modal" id="closeTerminalBtn">✕</button>
+      </div>
+      <div class="terminal-modal-body" id="terminalOutput">
+        <div class="term-line welcome-text">
+          <span>⚡ Welcome to Anupriya S's Interactive Developer Terminal!</span>
+        </div>
+        <div class="term-line">
+          <span>Type <span class="term-cmd">help</span> to view available commands, or explore: <span class="term-highlight">skills</span>, <span class="term-highlight">projects</span>, <span class="term-highlight">contact</span>, <span class="term-highlight">hire</span>.</span>
+        </div>
+      </div>
+      <div class="terminal-modal-input-row">
+        <span class="term-prompt">anupriya:~$</span>
+        <input type="text" id="terminalInput" placeholder="type a command..." autofocus autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUME MODAL -->
+  <div class="resume-modal" id="resumeModal">
+    <div class="resume-modal-dialog glass-panel">
+      <div class="resume-modal-header">
+        <h3>Resume Document — Anupriya S</h3>
+        <button class="btn-close-modal" id="closeResumeModalBtn">✕</button>
+      </div>
+      <div class="resume-preview-card">
+        <div class="resume-header-preview">
+          <h2>Anupriya S</h2>
+          <div class="sub-contact">anupriya07042006@gmail.com | +91-6382750472 | Coimbatore, India</div>
+          <p class="summary-txt">
+            Motivated engineering student with a strong foundation in programming, software development, and AI technologies. Experienced in developing academic and team projects involving AI, web development, and API integration.
+          </p>
+        </div>
+        <div class="resume-section-mini">
+          <h4>Education</h4>
+          <p><strong>SNS College Of Technology</strong> (2025–2029) — B.E. Computer Science & Engineering | CGPA: <strong>9.33 / 10</strong></p>
+        </div>
+        <div class="resume-section-mini">
+          <h4>Internship</h4>
+          <p><strong>Nxtlogic Software Solutions</strong> (June 2026) — Full Stack Web Development Intern</p>
+        </div>
+        <div class="resume-section-mini">
+          <h4>Flagship Projects</h4>
+          <ul>
+            <li><strong>AI Patent Explorer</strong>: Python, NLP, Machine Learning, Flask, HTML/CSS, Patent APIs, NumPy, Pandas</li>
+            <li><strong>CareerPilot AI</strong>: Python, Slack Bolt, Slack API, Ollama, Llama 3.2, python-dotenv</li>
+          </ul>
+        </div>
+        <div class="resume-section-mini">
+          <h4>Research & Certifications</h4>
+          <p>CIT Paper Presentation: AI-Powered Real-Time Brain-Computer Interface for Paralyzed Patients Using Stream Computing</p>
+          <p>IBM Exploring AI • Scaler Python • LinkedIn Learning Digital Networking Strategies</p>
+        </div>
+      </div>
+      <div class="resume-modal-actions">
+        <button class="btn btn-secondary" onclick="window.print()">Print / Save as PDF</button>
+        <a href="mailto:anupriya07042006@gmail.com?subject=Resume%20Inquiry%20-%20Anupriya%20S" class="btn btn-primary">Request Full Official PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING TOAST CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="logo-text">Anupriya</span>
+        <span class="logo-accent">.AI</span>
+        <p>Built with innovation, passion, and modern web standards.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#demos">AI Demos</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-copyright">
+        © 2026 Anupriya S. Designed & engineered for the next era of AI.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
